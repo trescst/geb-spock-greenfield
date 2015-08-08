@@ -5,8 +5,6 @@ import geb.Page
  */
 class PixxisHomePage extends Page {
 
-    static url = "https://www.pixxis.be"
-
     static at = { title.equals("Pixxis") }
 
     static content = {

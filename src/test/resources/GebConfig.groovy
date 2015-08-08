@@ -35,4 +35,4 @@ environments {
 
 // To run the tests with all browsers just run “./gradlew test”
 
-baseUrl = "http://www.gebish.org"
+baseUrl = "http://www.pixxis.be"
