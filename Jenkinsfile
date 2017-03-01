@@ -5,7 +5,9 @@ try{
       git 'https://github.com/glnds/geb-spock-greenfield.git'
     }
     stage('Build'){
-      sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle firefoxTest"
+      wrap([$class: 'Xvfb']) {
+        sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle firefoxTest"
+      }
     }
   }
 } catch (ex) {
