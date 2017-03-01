@@ -5,11 +5,11 @@ ext {
     drivers = ["firefox", "chrome", "phantomJs"]
 
     ext {
-        groovyVersion = '2.4.1'
-        gebVersion = '0.12.1'
-        seleniumVersion = '2.46.0'
-        chromeDriverVersion = '2.10'
-        phantomJsVersion = '1.9.7'
+        groovyVersion = '2.4.9'
+        gebVersion = '1.1.1'
+        seleniumVersion = '2.53.0'
+        chromeDriverVersion = '2.24'
+        phantomJsVersion = '2.1.1'
     }
 }
 
@@ -17,6 +17,11 @@ apply plugin: "groovy"
 apply from: "gradle/idea.gradle"
 apply from: "gradle/ci.gradle"
 apply from: "gradle/osSpecificDownloads.gradle"
+
+task wrapper(type: Wrapper) {
+    description = 'bootstrap the gradle wrapper'
+    gradleVersion = '3.4'
+}
 
 repositories {
     mavenCentral()
