@@ -4,9 +4,14 @@ try{
     stage('Checkout'){
       git 'https://github.com/glnds/geb-spock-greenfield.git'
     }
-    stage('Build'){
+    stage('Test #1 - Firefox'){
       wrap([$class: 'Xvfb']) {
-        sh "export PATH=$PATH:/opt/firefox && ./gradlew --gradle-user-home /var/lib/jenkins/.gradle firefoxTest"
+        sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle firefoxTest"
+      }
+    }
+    stage('Test #2 - Chrome'){
+      wrap([$class: 'Xvfb']) {
+        sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle chromeTest"
       }
     }
   }
