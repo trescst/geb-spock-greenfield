@@ -6,7 +6,7 @@ try{
     }
     stage('Build'){
       wrap([$class: 'Xvfb']) {
-        sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle firefoxTest"
+        sh "./gradlew --gradle-user-home /var/lib/jenkins/.gradle phantomJsTest"
       }
     }
   }
