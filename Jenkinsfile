@@ -2,7 +2,7 @@
 try{
   node ('xvfb'){
     stage('Checkout'){
-      git 'https://github.com/glnds/geb-spock-greenfield.git'
+      git 'https://github.com/trescst/geb-spock-greenfield.git'
     }
     stage('Test #1 - Firefox'){
       wrap([$class: 'Xvfb']) {
